@@ -67,12 +67,42 @@ function insertionSort(array) {
   
     return array;
 }
+
+function mergeSort(array) {
+    if (array.length <= 1) {
+      return array;
+    }
   
+    const mid = Math.floor(array.length / 2);
+    const left = mergeSort(array.slice(0, mid));
+    const right = mergeSort(array.slice(mid));
+  
+    return merge(left, right);
+  }
+  
+  function merge(left, right) {
+    let i = 0;
+    let j = 0;
+    const mergedArray = [];
+  
+    while (i < left.length && j < right.length) {
+      if (left[i] <= right[j]) {
+        mergedArray.push(left[i]);
+        i++;
+      } else {
+        mergedArray.push(right[j]);
+        j++;
+      }
+    }
+  
+    return mergedArray.concat(left.slice(i), right.slice(j));
+}
   
 module.exports = {
     bubbleSort,
     quickSort,
     selectionSort,
     insertionSort,
+    mergeSort
 };
   
