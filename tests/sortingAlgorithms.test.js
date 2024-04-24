@@ -19,4 +19,10 @@ describe('Sorting Algorithms', () => {
     expect(sortedArray).toEqual([1, 2, 4, 7, 9]);
   });
 
+  test('Insertion Sort', () => {
+    const unsortedArray = [4, 2, 7, 1, 9];
+    const sortedArray = insertionSort(unsortedArray);
+    expect(sortedArray).toEqual([1, 2, 4, 7, 9]);
+  });
+
 });
