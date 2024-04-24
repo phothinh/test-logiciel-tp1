@@ -32,4 +32,28 @@ function readCSVToArray(filename) {
     }
 }
 
-module.exports = { readCSVToArray };
+function writeArrayToCSV(filename, data) {
+    try {
+    if (data.length === 0) {
+        throw new Error('Data array is empty');
+    }
+
+    const headers = Object.keys(data[0]);
+    const csvLines = [];
+
+    // Construire chaque ligne du CSV
+    data.forEach((entry) => {
+        const values = headers.map((header) => entry[header] || ''); // Gérer les valeurs manquantes
+        csvLines.push(values.join(','));
+    });
+
+    const csvContent = `${headers.join(',')}\n${csvLines.join('\n')}\n`;
+
+    fs.writeFileSync(filename, csvContent);
+    console.log(`CSV file "${filename}" created successfully`);
+    } catch (error) {
+        console.error('Error writing CSV file:', error);
+    }
+}
+
+module.exports = { readCSVToArray, writeArrayToCSV};
