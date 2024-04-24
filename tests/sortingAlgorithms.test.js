@@ -13,4 +13,10 @@ describe('Sorting Algorithms', () => {
     expect(sortedArray).toEqual([1, 2, 4, 7, 9]);
   });
 
+  test('Selection Sort', () => {
+    const unsortedArray = [4, 2, 7, 1, 9];
+    const sortedArray = selectionSort(unsortedArray);
+    expect(sortedArray).toEqual([1, 2, 4, 7, 9]);
+  });
+
 });
