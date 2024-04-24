@@ -1,3 +1,8 @@
+/**
+ * Trie un tableau en utilisant l'algorithme de tri à bulles.
+ * @param {number[]} array - Le tableau à trier.
+ * @returns {number[]} - Le tableau trié par ordre croissant.
+ */
 function bubbleSort(array) {
     const n = array.length;
     for (let i = 0; i < n - 1; i++) {
@@ -10,6 +15,11 @@ function bubbleSort(array) {
     return array;
 }
 
+/**
+ * Trie un tableau en utilisant l'algorithme de tri rapide (quicksort).
+ * @param {number[]} array - Le tableau à trier.
+ * @returns {number[]} - Le tableau trié par ordre croissant.
+ */
 function quickSort(array) {
     if (array.length <= 1) {
       return array;
@@ -30,6 +40,11 @@ function quickSort(array) {
     return [...quickSort(left), pivot, ...quickSort(right)];
 }
 
+/**
+ * Trie un tableau en utilisant l'algorithme de tri par sélection.
+ * @param {number[]} array - Le tableau à trier.
+ * @returns {number[]} - Le tableau trié par ordre croissant.
+ */
 function selectionSort(array) {
     const n = array.length;
   
@@ -50,6 +65,11 @@ function selectionSort(array) {
     return array;
 }
 
+/**
+ * Trie un tableau en utilisant l'algorithme de tri par insertion.
+ * @param {number[]} array - Le tableau à trier.
+ * @returns {number[]} - Le tableau trié par ordre croissant.
+ */
 function insertionSort(array) {
     const n = array.length;
   
@@ -68,6 +88,11 @@ function insertionSort(array) {
     return array;
 }
 
+/**
+ * Trie un tableau en utilisant l'algorithme de tri fusion (mergesort).
+ * @param {number[]} array - Le tableau à trier.
+ * @returns {number[]} - Le tableau trié par ordre croissant.
+ */
 function mergeSort(array) {
     if (array.length <= 1) {
       return array;
