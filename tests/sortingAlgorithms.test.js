@@ -6,5 +6,11 @@ describe('Sorting Algorithms', () => {
     const sortedArray = bubbleSort(unsortedArray);
     expect(sortedArray).toEqual([1, 2, 4, 7, 9]);
   });
-  
+
+  test('Quick Sort', () => {
+    const unsortedArray = [4, 2, 7, 1, 9];
+    const sortedArray = quickSort(unsortedArray);
+    expect(sortedArray).toEqual([1, 2, 4, 7, 9]);
+  });
+
 });
