@@ -25,4 +25,10 @@ describe('Sorting Algorithms', () => {
     expect(sortedArray).toEqual([1, 2, 4, 7, 9]);
   });
 
+  test('Merge Sort', () => {
+    const unsortedArray = [4, 2, 7, 1, 9];
+    const sortedArray = mergeSort(unsortedArray);
+    expect(sortedArray).toEqual([1, 2, 4, 7, 9]);
+  });
+
 });
