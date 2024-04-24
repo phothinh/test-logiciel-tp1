@@ -1,5 +1,5 @@
 const fs = require('fs');
-const { readCSVToArray } = require('../src/fileOperations.js');
+const { readCSVToArray, writeArrayToCSV } = require('../src/fileOperations.js');
 const faker = require('faker');
 
 describe('CSV Operations', () => {
@@ -39,6 +39,21 @@ describe('CSV Operations', () => {
         const data = readCSVToArray(testFilename);
 
         expect(data).toHaveLength(0);
+    });
+
+    test('Write array of objects to CSV file', () => {
+        const newData = [
+            { name: 'John', age: 30, email: 'john@example.com' },
+            { name: 'Jane', age: 25, email: 'jane@example.com' }
+        ];
+
+        writeArrayToCSV(testFilename, newData);
+
+        const data = readCSVToArray(testFilename);
+
+        expect(data).toHaveLength(2);
+        expect(data[0]).toEqual(newData[0]);
+        expect(data[1]).toEqual(newData[1]);
     });
 
 });
